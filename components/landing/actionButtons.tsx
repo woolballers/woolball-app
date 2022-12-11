@@ -15,7 +15,9 @@ export default function ActionButtons() {
           fontWeight={'bold'}
           colorScheme={'red'}
           bg={'woolball.400'}
-          _hover={{ bg: 'woolball.500' }}
+          border="1px"
+          borderColor="woolball.500"
+          _hover={{ color: "woolball.700", bg: "woolball.0", borderColor: "woolball.500" }}
           px={{ base: 6, md: 16, sm: 8 }}
           shadow={'sm'}
         >
@@ -32,6 +34,7 @@ export default function ActionButtons() {
         px={{ base: 6, md: 16, sm: 8 }}
         border="1px"
         borderColor="woolball.300"
+        _hover={{ color: "woolball.700", bg: "woolball.0", borderColor: "woolball.500" }}
         shadow={'sm'}
       >
         READ MORE

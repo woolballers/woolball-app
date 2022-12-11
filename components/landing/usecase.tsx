@@ -31,9 +31,8 @@ export default function UseCase({
     variant === 'other' ? { base: 'row' } : { base: 'row', lg: 'column' }
   return (
     <Stack direction={stackDirection}>
-      <CheckmarkIcon variant={variant} />
       <Flex flexDirection={'row'} alignItems={'left'}>
-        <Text>{children}</Text>
+        <CheckmarkIcon variant={variant}/>{'\u00A0'}<Text>{children}</Text>
       </Flex>
     </Stack>
   )

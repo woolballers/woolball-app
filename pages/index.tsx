@@ -1,4 +1,5 @@
 import {
+  Box,
   Stack,
   HStack,
   Flex,
@@ -113,28 +114,34 @@ export default function Home() {
         <Flex w={'100%'} align={'center'} flex={1} justify={'center'}>
           <NextLink href="/description" legacyBehavior passHref>
             <Link
-              aria-label="Woolball Twitter"
-              p="1"
+              aria-label="woolball-article"
+              px={{ base: 6, md: 4, sm: 8 }}
               color={'woolball.400'}
               _hover={{
-                color: 'woolball.300',
+                color: 'woolball.600',
                 borderColor: 'woolball.400',
-                borderRadius: '3px',
-                bg: 'woolball.50',
+                borderRadius: '4px',
+                bg: 'woolball.0',
               }}
             >
               <HStack>
-                <Text fontSize={'18px'}>
+                <Text fontSize={'24px'}>
                   read an article about woolball
                 </Text>
-
                 <ArrowIcon />
               </HStack>
             </Link>
           </NextLink>
         </Flex>
       </SimpleGrid>
-      <Roadmap />
+      <Box
+        bg={'woolball.1'}
+        borderRadius={'10px'}
+        px={{ base: 2, md: 4, sm: 6 }}
+        py={{ base: 2, md: 4, sm: 6 }}
+      >
+        <Roadmap />
+      </Box>
     </Layout>
   )
 }

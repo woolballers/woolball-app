@@ -64,7 +64,7 @@ export default function Navbar() {
         <NextLink href="/description" legacyBehavior passHref>
           <Link
             color={'woolball.400'}
-            _hover={{ color: 'woolball.300', textDecoration: 'none' }}
+            _hover={{ bg: 'woolball.0', color: 'woolball.700', textDecoration: 'none' }}
           >
             <Heading fontSize={'md'} fontWeight={'semibold'}>
               <Text className={TenikaFont.className}>
@@ -138,7 +138,9 @@ export default function Navbar() {
                 <Link
                   className={TenikaFont.className}
                   color={'woolball.400'}
-                  _hover={{ color: 'woolball.300', textDecoration: 'none' }}
+                  px={{ base: 6, md: 4, sm: 8 }}
+                  borderRadius={'4px'}
+                  _hover={{ bg: 'woolball.0', color: 'woolball.700', textDecoration: 'none' }}
                 >
                   {'What is Woolball?'.toUpperCase()}
                 </Link>

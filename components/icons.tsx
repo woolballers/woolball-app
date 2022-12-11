@@ -12,15 +12,15 @@ function SocialIcon({ socialProfile }: { socialProfile: SocialProfileType }) {
       p="1"
       color={'woolball.400'}
       _hover={{
-        color: 'woolball.300',
-        borderColor: 'woolball.400',
-        bg: 'woolball.50',
+        color: 'woolball.700',
+        borderColor: 'woolball.700',
+        bg: 'woolball.1',
       }}
     >
       <Icon
         as={socialProfile.image}
         display="block"
-        transition="color 0.2s"
+        transition="color 0.0s"
         h="5"
       />
     </Link>
@@ -31,7 +31,10 @@ export default function SocialIcons(props: any) {
   return (
     <Wrap {...props}>
       {SOCIAL_PROFILES.map((socialProfile: any) => (
-        <SocialIcon socialProfile={socialProfile} key={socialProfile.label} />
+        <SocialIcon
+          socialProfile={socialProfile}
+          key={socialProfile.label}
+        />
       ))}
     </Wrap>
   )

@@ -39,11 +39,17 @@ export default function Footer() {
           spacing={5}
           fontWeight={'bold'}
         >
-          <NextLink href="/what-is-woolball" legacyBehavior passHref>
+          <NextLink href="/description" legacyBehavior passHref>
             <Link
+              px={{ base: 6, md: 4, sm: 8 }}
               className={TenikaFont.className}
               color={'woolball.400'}
-              _hover={{ color: 'woolball.300', textDecoration: 'none' }}
+              _hover={{
+                color: 'woolball.700',
+                borderColor: 'woolball.400',
+                borderRadius: '4px',
+                bg: 'woolball.0',
+              }}
             >
               {'What is Woolball?'.toUpperCase()}
             </Link>

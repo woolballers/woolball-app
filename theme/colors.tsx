@@ -13,6 +13,8 @@ export default {
   },
 
   woolball: {
+    0: '#72a7f766',
+    1: '#72a7f720',
     50: '#ffeedd',
     100: '#fed2b3',
     200: '#f8b587',
