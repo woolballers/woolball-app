@@ -1,20 +1,23 @@
 import Head from 'next/head'
 import { Container, chakra } from '@chakra-ui/react'
-
-import localFont from '@next/font/local'
 import Navbar from './navbar'
 import Footer from './footer'
-import Header from './head/header'
-const AspektaFont = localFont({ src: '../public/fonts/AspektaVF.woff2' })
+import Header from './header/header'
+import localFont from '@next/font/local'
+const TimeburnerFont = localFont({ src: '../public/fonts/Timeburner-Bold.woff2' })
+const TenikaFont = localFont({ src: '../public/fonts/Tenika-Regular.woff2' })
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <chakra.div className="container">
       <Header />
-
-      <main className={AspektaFont.className}>
+      <main>
         <Navbar />
-        <Container maxW={'7xl'}>{children}</Container>
+          <Container
+            className={TenikaFont.className}
+            maxW={'7xl'}
+          >{children}
+          </Container>
         <Footer />
       </main>
     </chakra.div>

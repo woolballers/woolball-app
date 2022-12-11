@@ -7,13 +7,17 @@ import {
   SimpleGrid,
   Link,
 } from '@chakra-ui/react'
-import GiantLogo from '../components/landing_page/giant_logo'
-import Roadmap from '../components/landing_page/road_map'
-import ActionButtons from '../components/landing_page/action_buttons'
-import ArrowIcon from '../components/svgs/arrow'
-import UseCase from '../components/landing_page/use_case'
+import GiantLogo from '../components/landing/giantLogo'
+import Roadmap from '../components/landing/roadmap'
+import ActionButtons from '../components/landing/actionButtons'
+import ArrowIcon from '../components/vectors/arrow'
+import UseCase from '../components/landing/usecase'
 import Layout from '../components/layout'
 import NextLink from 'next/link'
+import localFont from '@next/font/local'
+const PrimeFont = localFont({ src: '../public/fonts/Prime-Regular.woff2' })
+const RobotoFont = localFont({ src: '../public/fonts/Roboto-Mono.woff2' })
+const TenikaFont = localFont({ src: '../public/fonts/Tenika-Regular.woff2' })
 
 export default function Home() {
   return (
@@ -44,36 +48,40 @@ export default function Home() {
             fontSize={{ base: '5xl', sm: '6xl', lg: '7xl' }}
           >
             <Text
-              fontSize={{ base: '32px', sm: '48px', lg: '80px' }}
+              className={PrimeFont.className}
+              fontSize={{ base: '28px', sm: '44px', lg: '70px' }}
               lineHeight={{ base: '40px', sm: '56px', lg: '80px' }}
               as={'span'}
               position={'relative'}
             >
-              A name system with links
+              {'a next-gen naming system'.toUpperCase()}
             </Text>
           </Heading>
           <Text
             color={'black'}
-            fontSize={{ base: '16px', md: '18px', lg: '22px' }}
+            fontSize={{ base: '20px', md: '24px', lg: '28px' }}
             lineHeight={{ base: '24px', md: '26px', lg: '32px' }}
             paddingRight={{ base: 0, md: 16 }}
           >
-            Woolball is a new name system that makes it super easy to connect
-            people, apps, and identities using links. With Woolball you can
+            Woolball is a next-generation naming system that makes it super easy to connect
+            people, apps, and identities using links. With Woolball, you can
             build stuff like:
           </Text>
           <SimpleGrid
-            columns={{ base: 1, lg: 3 }}
+            columns={{ base: 3, lg: 2 }}
             spacing={{ base: 2, lg: 8 }}
             color={'black'}
             fontSize={{ base: '16px', sm: '18px', lg: '22px' }}
             lineHeight={{ base: '24px', sm: '26px', lg: '32px' }}
-            fontWeight={'400'}
+            fontWeight={'800'}
             verticalAlign={'middle'}
           >
             <UseCase>Reputation</UseCase>
             <UseCase>Web3 accounts</UseCase>
             <UseCase>Social dApps</UseCase>
+            <UseCase>Filter interface</UseCase>
+            <UseCase>Web2 scamming</UseCase>
+            <UseCase>Constant rugging</UseCase>
           </SimpleGrid>
           <ActionButtons />
         </Stack>
@@ -98,12 +106,12 @@ export default function Home() {
             fontSize={{ base: '24px', md: '32px', lg: '40px' }}
             lineHeight={{ base: '32px', md: '40px', lg: '48px' }}
           >
-            We are currently building Woolball! Specs and code will follow soon,
-            see our roadmap 👇
+            We are currently building Woolball! Specs and code will follow soon.
+            Meanwhile, see our roadmap 👇
           </Text>
         </Flex>
         <Flex w={'100%'} align={'center'} flex={1} justify={'center'}>
-          <NextLink href="/what-is-woolball" legacyBehavior passHref>
+          <NextLink href="/description" legacyBehavior passHref>
             <Link
               aria-label="Woolball Twitter"
               p="1"
@@ -111,12 +119,13 @@ export default function Home() {
               _hover={{
                 color: 'woolball.300',
                 borderColor: 'woolball.400',
+                borderRadius: '3px',
                 bg: 'woolball.50',
               }}
             >
               <HStack>
-                <Text fontSize={'16px'}>
-                  read a whole article about woolball
+                <Text fontSize={'18px'}>
+                  read an article about woolball
                 </Text>
 
                 <ArrowIcon />

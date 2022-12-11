@@ -4,6 +4,7 @@ import {
   Button,
   CloseButton,
   Flex,
+  Text,
   HStack,
   IconButton,
   Link,
@@ -18,8 +19,11 @@ import {
 import { FaMoon, FaSun } from 'react-icons/fa'
 import NextLink from 'next/link'
 import { AiOutlineMenu } from 'react-icons/ai'
-import Logo from '../svgs/logo'
-import SocialIcons from '../social_icons'
+import Logo from '../vectors/logo'
+import SocialIcons from '../icons'
+import localFont from '@next/font/local'
+const PrimeFont = localFont({ src: '../../public/fonts/Prime-Regular.woff2' })
+const TenikaFont = localFont({ src: '../../public/fonts/Tenika-Regular.woff2' })
 
 export default function Navbar() {
   const mobileNav = useDisclosure()
@@ -57,13 +61,15 @@ export default function Navbar() {
           bg: 'woolball.100',
         }}
       >
-        <NextLink href="/what-is-woolball" legacyBehavior passHref>
+        <NextLink href="/description" legacyBehavior passHref>
           <Link
             color={'woolball.400'}
             _hover={{ color: 'woolball.300', textDecoration: 'none' }}
           >
             <Heading fontSize={'md'} fontWeight={'semibold'}>
-              What&apos;s Woolball?
+              <Text className={TenikaFont.className}>
+                {'What is Woolball?'.toUpperCase()}
+              </Text>
             </Heading>
           </Link>
         </NextLink>
@@ -128,12 +134,13 @@ export default function Navbar() {
               w="full"
               justify={{ base: 'center', lg: 'left' }}
             >
-              <NextLink href="/what-is-woolball" legacyBehavior passHref>
+              <NextLink href="/description" legacyBehavior passHref>
                 <Link
+                  className={TenikaFont.className}
                   color={'woolball.400'}
                   _hover={{ color: 'woolball.300', textDecoration: 'none' }}
                 >
-                  What&apos;s Woolball?
+                  {'What is Woolball?'.toUpperCase()}
                 </Link>
               </NextLink>
               {process.env.SHOW_DOCS_LINK === '1' && (

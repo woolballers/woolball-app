@@ -9,10 +9,12 @@ import {
   Flex,
   Heading,
 } from '@chakra-ui/react'
-import SocialIcons from '../components/social_icons'
+import SocialIcons from '../components/icons'
 import NextLink from 'next/link'
-
-import LogoReverse from './svgs/logo_reverse'
+import localFont from '@next/font/local'
+const TenikaFont = localFont({ src: '../public/fonts/Tenika-Regular.woff2' })
+const SFFont = localFont({ src: '../public/fonts/SFMono-Regular.woff2' })
+import LogoReverse from './vectors/logo_'
 
 export default function Footer() {
   return (
@@ -39,10 +41,11 @@ export default function Footer() {
         >
           <NextLink href="/what-is-woolball" legacyBehavior passHref>
             <Link
+              className={TenikaFont.className}
               color={'woolball.400'}
               _hover={{ color: 'woolball.300', textDecoration: 'none' }}
             >
-              What&apos;s Woolball?
+              {'What is Woolball?'.toUpperCase()}
             </Link>
           </NextLink>
           {process.env.SHOW_DOCS_LINK === '1' && (
@@ -65,8 +68,11 @@ export default function Footer() {
             </Stack>
 
             <Flex h={'full'} align={'end'} justify={'end'}>
-              <Text fontSize={'12px'} color={'black'}>
-                ©2022
+              <Text fontSize={'18px'} color={'black'}>
+                {'© \u00A0'}
+              </Text>
+              <Text className={SFFont.className} fontSize={'18px'} color={'black'}>
+                {'2022'}
               </Text>
             </Flex>
           </HStack>
